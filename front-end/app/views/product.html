@@ -1,0 +1,16 @@
+<table class='table' ng-show="products">
+  <tr>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Price</th>
+  <tr>
+  <tr ng-repeat="product in products">
+    <td>{{product.name}}</td>
+    <td>{{product.quantity}}</td>
+    <td>{{product.price}}</td>
+    <td>
+      <a href class="btn btn-default" ng-click="update(product)">Edit</a>
+      <a href class="btn btn-danger" ng-click="delete(product)">Delete</a>
+    </td>
+  </tr>
+</table>
