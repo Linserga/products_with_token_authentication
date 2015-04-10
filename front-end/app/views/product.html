@@ -9,8 +9,9 @@
     <td>{{product.quantity}}</td>
     <td>{{product.price}}</td>
     <td>
-      <a href class="btn btn-default" ng-click="update(product)">Edit</a>
+      <a href class="btn btn-default" ng-click="edit(product)">Edit</a>
       <a href class="btn btn-danger" ng-click="delete(product)">Delete</a>
     </td>
   </tr>
 </table>
+<button class="btn btn-primary" ng-click="create()">Add Product +</button>

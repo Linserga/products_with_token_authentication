@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     post '/login' => 'sessions#create'
     delete '/logout' => 'sessions#destroy'
     resources :users, only: [:show] do
-      resources :products, only: [:index, :create, :destroy]
+      resources :products
     end    
   end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -8,6 +8,11 @@ module Api
 			render json: @products
 		end
 
+		def show
+			@product = @current_user.products.find_by(id: params[:id])
+			render json: @product
+		end
+
 		def create
 		 	@product = @current_user.products.build(product_params)
 
@@ -16,10 +21,20 @@ module Api
 		 	else
 		 		render json: {}, status: :unprocessable_entity
 		 	end
+		end
+
+		def update			
+			@product = @current_user.products.find_by(id: params[:product][:id])
+			
+			if @product.update_attributes(product_params)
+				render json: {}
+			else
+				render json: {}, status: :internal_server_error
+			end
 		end 
 
 		def destroy
-			@product = @current_user.products.find_by(id: params[:product_id])
+			@product = @current_user.products.find_by(id: params[:id])
 			@product.destroy
 
 			render json: {}

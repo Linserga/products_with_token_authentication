@@ -34,9 +34,13 @@ angular.module('frontEndApp', ['ngCookies', 'ngMessages', 'ngResource','ngRoute'
         templateUrl: 'views/product.html',
         controller: 'ProductsCtrl'
       })
-      .when('/users/:id/edit', {
+      .when('/users/:id/products/:productId/edit', {
         templateUrl: 'views/edit.html',
         controller: 'EditCtrl'
+      })
+      .when('/users/:id/products/new', {
+        templateUrl: 'views/new.html',
+        controller: 'CreateCtrl'
       })
       .otherwise({
         redirectTo: '/login'
